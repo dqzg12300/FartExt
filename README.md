@@ -7,7 +7,7 @@
 
 ### 下载
 
-
+链接: https://pan.baidu.com/s/1Tu1_B9eEt8bzbYNVblmt0w  密码: dqk5
 
 ### 使用
 
@@ -29,9 +29,39 @@
 
 可以使用[fridaUiTools](https://github.com/dqzg12300/fridaUiTools)中的fart功能中的rom主动调用来触发
 
+![image-20210805100343385](/Users/king/git_src/kblog/blog/source/_posts/fartext/image-20210805100343385.png)
+
 也可以自己使用frida脚本
 
-~~~
+~~~javascript
+function romClassesInvoke(classes){
+    Java.perform(function(){
+        klog("romClassesInvoke start load");
+        var fartExt=Java.use("cn.mik.Fartext");
+        if(!fartExt.fartWithClassList){
+            klog("fartExt中未找到fartWithClassList函数，可能是未使用Fartext的rom")
+            return ;
+        }
+        fartExt.fartWithClassList(classes);
+    })
+}
+
+function romFartAllClassLoader(){
+    Java.perform(function(){
+       var fartExt=Java.use("cn.mik.Fartext");
+       if(!fartExt.fartWithClassLoader){
+           klog("fartExt中未找到fartWithClassLoader函数，可能是未使用Fartext的rom");
+           return;
+       }
+       Java.enumerateClassLoadersSync().forEach(function(loader){
+           klog("romFartAllClassLoader to loader:"+loader);
+           if(loader.toString().indexOf("BootClassLoader")==-1){
+               klog("fart start loader:"+loader);
+               fartExt.fartWithClassLoader(loader);
+           }
+       })
+    });
+}
 ~~~
 
 **4、修复dex**
@@ -44,19 +74,15 @@
 
 或者使用[fridaUiTools](https://github.com/dqzg12300/fridaUiTools)的辅助功能进行修复
 
+![image-20210805100310939](/Users/king/git_src/kblog/blog/source/_posts/fartext/image-20210805100310939.png)
+
 **5、日志查看**
 
 logcat搜索fartext即可搜到所有相关日志。
 
-**6、实现原理**
+**6、流程图**
 
->
-
-**7、流程图**
-
-
-
-**8、示例**
+![image-20210804190809645](/Users/king/git_src/FartExt/img/image-20210804190809645.png)
 
 
 
