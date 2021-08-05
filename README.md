@@ -84,5 +84,7 @@ logcat搜索fartext即可搜到所有相关日志。
 
 ![image-20210804190809645](./img/image-20210804190809645.png)
 
+### 7、实现原理及案例
 
+> [FartExt之优化更深主动调用的FART10](https://bbs.pediy.com/thread-268760.htm)
 
