@@ -7,7 +7,7 @@
 
 ### 下载
 
-链接: https://pan.baidu.com/s/1Tu1_B9eEt8bzbYNVblmt0w  密码: dqk5
+链接: https://pan.baidu.com/s/1lgG8P3H2Q5B6e7rZr58cXw  密码: 033p
 
 ### 使用
 
@@ -29,7 +29,7 @@
 
 可以使用[fridaUiTools](https://github.com/dqzg12300/fridaUiTools)中的fart功能中的rom主动调用来触发
 
-![image-20210805100343385](/Users/king/git_src/kblog/blog/source/_posts/fartext/image-20210805100343385.png)
+![image-20210805100343385](./img/image-20210805100343385.png)
 
 也可以自己使用frida脚本
 
@@ -74,7 +74,7 @@ function romFartAllClassLoader(){
 
 或者使用[fridaUiTools](https://github.com/dqzg12300/fridaUiTools)的辅助功能进行修复
 
-![image-20210805100310939](/Users/king/git_src/kblog/blog/source/_posts/fartext/image-20210805100310939.png)
+![image-20210805100310939](./img/image-20210805100310939.png)
 
 **5、日志查看**
 
@@ -82,7 +82,7 @@ logcat搜索fartext即可搜到所有相关日志。
 
 **6、流程图**
 
-![image-20210804190809645](/Users/king/git_src/FartExt/img/image-20210804190809645.png)
+![image-20210804190809645](./img/image-20210804190809645.png)
 
 
 
